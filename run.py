@@ -17,3 +17,9 @@ def random_row(board):
 
 def random_col(board):
     return randint(0, len(board)-1)
+
+
+guess_row = int(input("Guess Row: "))
+
+guess_col = int(input("Guess Colum: "))
+
