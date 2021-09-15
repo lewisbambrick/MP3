@@ -31,8 +31,13 @@ guess_col = int(input("Guess Colum: "))
 
 
 if guess_row == ship_row and guess_col == ship_col:
-    print("Congratulations! Youve sunk my battleship")
+    print("Congratulations! You've sunk my battleship!")
 else:
-    print("Ha!Better luck next time, You missed my battleship.")
-    board[guess_row][guess_col] = "x"
-    print_board(board)
+    if guess_row > 4 or guess_col > 4:
+        print("Oops that wasn't even in the ocean!")
+    elif board[guess_row][guess_col] == "x":
+        print("You've already guessed there, select another target. ")
+    else:
+        print("Ha!Better luck next time, You missed my battleship.")
+        board[guess_row][guess_col] = "x"
+        print_board(board)
